@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	<navigation-rule>
+		<description>Loging Page</description>
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{loginBean.checkValidUser}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{loginBean.checkValidUser}</from-action>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/failure.jsp</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+</faces-config>
